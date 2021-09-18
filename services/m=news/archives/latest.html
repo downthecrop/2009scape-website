@@ -1,10 +1,11 @@
 ---
 ---
 <!-- Redirect to latest news post -->
-{% for page in site.pages limit:1 %}
+{% for page in site.pages %}
   {% for tag in page.tags %}
     {% if tag == "news" %}
         <meta http-equiv="refresh" content="0; URL={{ page.url | prepend: site.baseurl }}" />
+        {% break %}
     {% endif %}
   {% endfor %}
 {% endfor %}
