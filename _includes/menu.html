@@ -1,11 +1,11 @@
 <ul id="menus">
-  <li class="top"><a href="/index.html" id="home" class="tl"><span class="ts">Home</span></a>
+  <li class="top"><a href="/index.html" id="home" class="tl">{% include active-menu.html content="home" %}Home</span></a>
   <li class="top"><a id="play" class="tl" href="http://play.2009scape.org/wiki/doku.php?id=start"><span
-        class="ts">Wiki</span></a>
+        class="tl">Wiki</span></a>
 
   </li>
-
-  <li class="top"><a id="play" class="tl" href="/services/m=news/archives/"><span class="ts">Updates</span></a>
+  <!--class ts is active tl is inactive -->
+  <li class="top"><a id="play" class="tl" href="/services/m=news/archives/">{% include active-menu.html content="news" %}Updates</span></a>
     <ul>
       <li><a href="/services/m=news/archives/" class="fly"><span>Legacy Updates</span></a></li>
       <li><a href="/services/m=news/list.html" class="fly"><span>Preservation Updates</span></a></li>
@@ -13,7 +13,7 @@
   </li>
   </li>
 
-  <li class="top"><a id="guide" class="tl" href="/site/game_guide/"><span class="ts">Game
+  <li class="top"><a id="guide" class="tl" href="/site/game_guide/">{% include active-menu.html content="guide" %}Game
         Guide</span></a>
     <ul>
       <li><a href="/site/game_guide/" class="fly"><span>Browse the Game Guide</span></a></li>
@@ -22,7 +22,7 @@
       <li><a href="/site/game_guide/about2009scape.html" class="fly"><span>About 2009scape</span></a></li>
     </ul>
   </li>
-  <li class="top"><a id="community" class="tl" href="/site/community/"><span class="ts">Community</span></a>
+  <li class="top"><a id="community" class="tl" href="/site/community/">{% include active-menu.html content="community" %}Community</span></a>
     <ul>
       <li><a href="https://discord.com/invite/43YPGND" class="fly"><span>Discord Server</span> </a></li>
       <li><a href="https://matrix.to/#/#09scape-general:matrix.org" class="fly"><span>Matrix Server</span> </a></li>
@@ -34,7 +34,7 @@
     </ul>
   </li>
 
-  <li class="top"><a id="help" class="tl" href="/site/help/"><span class="ts">Help</span></a>
+  <li class="top"><a id="help" class="tl" href="/site/help/">{% include active-menu.html content="help" %}Help</span></a>
     <ul>
       <li><a href="/site/help/faq.html" class="fly"><span>Frequently Asked Questions</span></a></li>
       <li><a href="https://gitlab.com/2009scape/2009scape/-/issues/new" class="fly"><span>Submit a Bug
@@ -46,7 +46,7 @@
 </li>
 
 <li class="top"><a id="login" class="tl" href="https://github.com/2009scape" rel="noopener noreferrer"
-    target="_blank"><span class="ts">Source Code</span></a>
+    target="_blank"><span class="tl">Source Code</span></a>
   <ul>
     <li>
     <li><a href="https://gitlab.com/2009scape/2009scape" rel="noopener noreferrer" target="_blank"

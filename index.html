@@ -213,11 +213,15 @@ title: A free & open-source remake of 2009 era RuneScape
                 <!--MORE UPDATES TABLE-->
                 <div class="sectionBody">
                   <table class="Updates">
-                    {% assign counter = '3' %}
-                    {% for page in site.pages reversed offset:3 %}
+                    {% assign counter = 0 %}
+                    {% assign added = 0 %}
+                    {% for page in site.pages reversed %}
                       {% for tag in page.tags %}
-                        {% if tag == "news" and counter != '6' %}
-                            {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
+                        {% if tag == "news" %}
+                          {% if counter < 3 %}
+                            {% assign counter = counter | plus:1 %}
+                          {% elsif added < 3 %}
+                            {% assign added = added | plus:1 %}
                             <!--TABLE ITEM-->
                             <tr>
                               <td>
@@ -231,9 +235,10 @@ title: A free & open-source remake of 2009 era RuneScape
                                 {{ page.date | date: '%d-%b-%Y' }}
                               </td>
                             </tr>
-
+                            {% endif %}
                         {% endif %}
                       {% endfor %}
+                      
                     {% endfor %}
                   </table>
                 </div>

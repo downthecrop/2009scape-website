@@ -1,0 +1,16 @@
+{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+{% if crumbs.size < 2 %}
+    {% if include.content == "home" %}
+        <span class="ts">
+    {% endif %}
+{% elsif  crumbs[2] == "m=news" and include.content == "news" %}
+    <span class="ts">
+{% elsif  crumbs[2] == "game_guide" and include.content == "guide" %}
+    <span class="ts">
+{% elsif  crumbs[2] == "community" and include.content == "community" %}
+    <span class="ts">
+{% elsif  crumbs[2] == "help" and include.content == "help" %}
+    <span class="ts">
+{% else %}
+    <span class="tl">
+{% endif %}
