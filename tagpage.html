@@ -1,11 +1,11 @@
 ---
 layout: default
-tag: news
+tag: test
 ---
 {% assign counter = '0' %}
 {% for page in site.pages %}
 {% for tag in page.tags %}
-{% if tag == "news" and counter < '5' %}
+{% if tag == "news" %}
     {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
 <li><a href="{{ page.url | prepend: site.baseurl }}">{{page.title}}
 </a> ({{ counter }})</li>
