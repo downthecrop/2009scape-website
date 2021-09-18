@@ -23,7 +23,7 @@ for f in onlyfiles:
     ## Jekyll
     tmp = open("test/"+f, "w")
     tmp.write('---\n')
-    tmp.write('title: '+soup.title.string+'\n')
+    tmp.write('title: '+soup.title.string.replace("2009scape - ","")+'\n')
     tmp.write('tags: news'+'\n')
     tmp.write('layout: newspost'+'\n')
     tmp.write('collection: Game Updates'+'\n')

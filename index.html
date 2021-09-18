@@ -213,48 +213,28 @@ title: 2009Scape - a free & open-source remake of 2009 era RuneScape
                 <!--MORE UPDATES TABLE-->
                 <div class="sectionBody">
                   <table class="Updates">
-                    <!--TABLE ITEM-->
-                    <tr>
-                      <td>
-                        <strong><a href="./services/m=news/2021-06-17.html">
-                          A New Slayer Design with farming patches</a></strong>
-                      </td>
-                      <td class="UpdatesCategory">
-                        Game Updates
-                      </td>
-                      <td class="UpdatesDate">
-                        26-July-2021
-                      </td>
-                    </tr>
-                    <!--TABLE ITEM-->
-                    <tr>
-                      <td>
-                        <strong><a href="./services/m=news/2021-06-17.html">The Daily Challenges</a></strong>
-                      </td>
-                      <td class="UpdatesCategory">
-                        Game Updates
-                      </td>
-                      <td class="UpdatesDate">
-                        26-July-2021
-                      </td>
-                    </tr>
-                    <!--TABLE ITEM-->
-                    <tr>
-                      <td>
-                        <strong><a href="./services/m=news/archives/2021-07-19.html">Hidden in the stars</a></strong>
-                      </td>
-                      <td class="UpdatesCategory">
-                        Game Updates
-                      </td>
-                      <td class="UpdatesDate">
-                        19-July-2021
-                      </td>
-                    </tr>
+                    {% assign counter = '3' %}
+                    {% for page in site.pages reversed offset:3 %}
+                      {% for tag in page.tags %}
+                        {% if tag == "news" and counter != '6' %}
+                            {% capture counter %}{{ counter | plus:'1' }}{% endcapture %}
+                            <!--TABLE ITEM-->
+                            <tr>
+                              <td>
+                                <strong><a href="{{ page.url | prepend: site.baseurl }}">
+                                  {{ page.title | replace: "2009scape - ", "" }}</a></strong>
+                              </td>
+                              <td class="UpdatesCategory">
+                                Game Updates
+                              </td>
+                              <td class="UpdatesDate">
+                                {{ page.date | date: '%b-%d-%Y' }}
+                              </td>
+                            </tr>
 
-
-
-
-
+                        {% endif %}
+                      {% endfor %}
+                    {% endfor %}
                   </table>
                 </div>
                 <!--LEFT LINK: DISCORD ANNOUNCEMENTS-->

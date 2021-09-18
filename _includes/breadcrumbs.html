@@ -5,6 +5,7 @@
     {% for crumb in crumbs offset: 1 %}
         {% if forloop.last %}
         > {{ page.title }}
+        <!-- add more strings here to remove them from breadcrumbs -->
         {% elsif crumb == "services" %}
         {% elsif crumb contains "=" %}
         {% else %}
