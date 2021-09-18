@@ -67,17 +67,17 @@ title: A free & open-source remake of 2009 era RuneScape
                   </DIV>
                   <DIV class=aowBody>
                     <DIV class=aowHeight>
-                      <DIV class=aowImage><A href="./site/wiki/quests/quest_guides.html"><IMG alt=""
+                      <DIV class=aowImage><A href="http://play.2009scape.org/wiki/doku.php?id=quest_guides"><IMG alt=""
                             src="./site/img/2009img/main/kbase/aow_icons/minigames.jpg"></A></DIV>
                       <P class=aowTitle>Quest Guide - Underconstruction</P>
                       <P>Coming back to a beautiful nostalgic or brand new experience of the 2009 era. You may forget
                         what
-                        Pikkupstix needed your help with. <a href="./site/wiki/quests/quest_guides.html">Read
+                        Pikkupstix needed your help with. <a href="http://play.2009scape.org/wiki/doku.php?id=quest_guides">Read
                           more...</a>
                       </P>
                     </DIV>
                   </DIV>
-                  <div class="articlesMore"><a href="./site/game_guide/manual.html">Browse the Game Guides</a></div>
+                  <div class="articlesMore"><a href="./site/game_guide/">Browse the Game Guides</a></div>
                 </DIV>
                 <DIV class=articlesFooter></DIV>
               </DIV>
@@ -95,7 +95,7 @@ title: A free & open-source remake of 2009 era RuneScape
                 if (navigator.appVersion.indexOf("Win") != -1) Name = "windows";
                 else Name = "unix";
                 if (Name == "windows") {
-                  window.location.href = "https://gitlab.com/2009scape/09launcher/-/jobs/artifacts/master/raw/build/libs/2009scape.zip?job=build";
+                  window.location.href = "https://gitlab.com/2009scape/09launcher/-/jobs/artifacts/master/raw/build/libs/2009scape.jar?job=build";
                 } else {
                   window.location.href = "https://gitlab.com/2009scape/09launcher/-/jobs/artifacts/master/raw/build/libs/2009scape.jar?job=build";
                 }
@@ -228,7 +228,7 @@ title: A free & open-source remake of 2009 era RuneScape
                                 Game Updates
                               </td>
                               <td class="UpdatesDate">
-                                {{ page.date | date: '%b-%d-%Y' }}
+                                {{ page.date | date: '%d-%b-%Y' }}
                               </td>
                             </tr>
 
