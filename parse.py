@@ -27,9 +27,8 @@ for f in onlyfiles:
     tmp.write('tags: news'+'\n')
     tmp.write('layout: newspost'+'\n')
     tmp.write('collection: Game Updates'+'\n')
-    tmp.write('date: '+f[:-5]+"00:00:00 +0000"+'\n')
-    tmp.write('authors: '+soup.find("div", {"class": "msgcreator uname"}).text.strip())
-
+    tmp.write('date: '+f[:-5]+" 00:00:00 +0000"+'\n')
+    tmp.write('authors: '+soup.find("div", {"class": "msgcreator uname"}).text.strip()+"\n")
     tmp.write('---\n')
     for hit in soup.findAll(attrs={'id' : 'content'}):
         tmp.write(unidecode(str(hit)))
