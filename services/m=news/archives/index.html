@@ -46,9 +46,9 @@ collection: Game Updates
     <!-- You can pin a post here-->
 
 
-    <!-- Jekyll -->
-    {% assign sorted = site.pages | sort: 'date' %}
-    {% for page in sorted reversed %}
+    <!-- Jekyll -->    
+    {% assign sorted = site.pages | orderby: 'date' | reverse  %}
+    {% for page in sorted %}
         {% for tag in page.tags %}
             {% if tag == "news" %}
             <tr class="thdnrml">
