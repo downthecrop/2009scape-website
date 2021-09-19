@@ -47,14 +47,13 @@ collection: Game Updates
 
 
     <!-- Jekyll -->
-
-    {% for page in site.pages reversed %}
+    {% assign sorted = site.pages | sort: 'date' | reverse %}
+    {% for page in sorted %}
         {% for tag in page.tags %}
             {% if tag == "news" %}
-
             <tr class="thdnrml">
                 <td class="threadtitle">
-                <a class="sticky1" href="{{ page.url | prepend: site.baseurl }}"><b>{{ page.title | replace: "2009scape - ", "" }}</b></a><br>
+                <a class="sticky1" href="{{ page.url | prepend: site.baseurl }}"><b>{{ page.title | replace: "2009Scape - ", "" }}</b></a><br>
                 <span class="nt">created by <span class="username"><img src="../../../site/img/forum/crown_gold.gif" height="8" width="10">{{ page.authors }}</span></span>
                 </td>
                 <!-- Category the posts are in -->

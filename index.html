@@ -116,86 +116,62 @@ title: A free & open-source remake of 2009 era RuneScape
 
               <!--LATEST UPDATE ITEMS SECTION-->
               <div class="section">
-                <!--LATEST UPDATE ITEM-->
-                <div class='sectionBody'>
-                  <div class='sectionHeight'>
-                    <div class='recentNews'>
-                      <!--UPDATE TITLE & DATE-->
-                      <div class='newsTitle'>
-                        <h3>Working Behind The Scenes</h3>
-                        <span>
-                          13-September-2021</span>
-                      </div>
-                      <!--UPDATE IMAGE-->
-                      <a class="newsImage" href="./services/m=news/archives/2021-09-16.html"><img clalt=''
-                          src="./site/2009scape-resources/img/updates/update-monthly-09.png"></a>
-                      <!--UPDATE CONTENT TEASER-->
-                      <p>  Hope everyone has had an amazing couple of weeks! We had quite the weekend with the host's machine needing repaired but we have all made it through and the server is now back up with some updates. The last couple of weeks I have been battling this virus so things have been a bit slow on my end when it came to website updates; 
-                        however, the server...
-                        <!--READ MORE LINK-->
-                        <br><a href="./services/m=news/archives/2021-09-16.html">Read more...</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!--END LATEST UPDATE ITEM-->
+                {% assign added = 0 %}
+                {% assign sorted = site.pages | sort: 'date' | reverse %}
+                {% for page in sorted %}
+                  {% for tag in page.tags %}
+                    {% if tag == "news" and added < 3%}
+                      {% if added == 0 %}
+                        {% assign added = added | plus:1 %}
+                          <!--LATEST UPDATE ITEM-->
+                          <div class='sectionBody'>
+                            <div class='sectionHeight'>
+                              <div class='recentNews'>
+                                <!--UPDATE TITLE & DATE-->
+                                <div class='newsTitle'>
+                                  <h3>{{ page.title | replace: "2009Scape - ", "" }}</h3>
+                                  <span>{{ page.date | date: '%d-%B-%Y' }}</span>
+                                </div>
+                                <!--UPDATE IMAGE-->
+                                <a class="newsImage" href="./services/m=news/archives/2021-09-16.html"><img clalt=''
+                                    src="./site/2009scape-resources/img/updates/update-monthly-09.png"></a>
+                                <!--UPDATE CONTENT TEASER-->
+                                <p>  {{ page.excerpt | truncate: 350 }}
+                                  <!--READ MORE LINK-->
+                                  <br><a href="{{ page.url | prepend: site.baseurl }}">Read more...</a>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <!--END LATEST UPDATE ITEM-->
+                        {% else %}
+                          {% assign added = added | plus:1 %}
+                          <!--RECENT UPDATE ITEM-->
+                          <div class="sectionBody">
+                            <div class="recentNews">
+                              <!--UPDATE TITLE & DATE-->
+                              <div class="newsTitle">
+                                <h3>{{ page.title | replace: "2009Scape - ", "" }}</h3>
+                                <span>{{ page.date | date: '%d-%B-%Y' }}</span>
+                              </div>
+                              <!--UPDATE ICON (Use most relevant to this post!)
+                              --
+                              GENERIC // generic1.jpg, generic2.jpg, generic3.jpg
+                              SETTINGS & TWEAKS // settings1.jpg, settings2.jpg, settings3.jpg
+                              OTHER // account.jpg, award.jpg, bugfix.jpg, combat.jpg, hiscores.jpg, money,jpg, random.jpg, website.jpg -->
+                              <img src="./site/2009scape-resources/img/updates/icons/generic1.jpg" />
 
-                <!--RECENT UPDATE ITEM-->
-                <div class="sectionBody">
-                  <div class="recentNews">
-                    <!--UPDATE TITLE & DATE-->
-                    <div class="newsTitle">
-                      <h3>Cleaning Up</h3>
-                      <span>30-August-2021</span>
-                    </div>
-                    <!--UPDATE ICON (Use most relevant to this post!)
-                    --
-                    GENERIC // generic1.jpg, generic2.jpg, generic3.jpg
-                    SETTINGS & TWEAKS // settings1.jpg, settings2.jpg, settings3.jpg
-                    OTHER // account.jpg, award.jpg, bugfix.jpg, combat.jpg, hiscores.jpg, money,jpg, random.jpg, website.jpg -->
-                    <img src="./site/2009scape-resources/img/updates/icons/generic1.jpg" />
-
-                    <!--UPDATE CONTENT TEASER-->
-                    <p>As the playerbase grows, there are obstacles in considering what content should be prioritized for the project. 
-                      Development will be focused on &quot;cleaning up&quot; the project&semi; 
-                      the current focus being auditing current code while converting old java class files to Kotlin, a current..
-
-                      <!--READ MORE LINK-->
-                      <br><a href="./services/m=news/archives/2021-07-19.html">Read more..</a>
-                    </p>
-                  </div>
-                </div>
-
-                <!--RECENT UPDATE ITEM-->
-                <div class="sectionBody">
-                  <div class="recentNews">
-                    <!--UPDATE TITLE & DATE-->
-                    <div class="newsTitle">
-                      <h3>A Fair Start</h3>
-                      <span>16-August-2021</span>
-                    </div>
-                    <!--UPDATE ICON (Use most relevant to this post!)
-                    --
-                    GENERIC // generic1.jpg, generic2.jpg, generic3.jpg
-                    SETTINGS & TWEAKS // settings1.jpg, settings2.jpg, settings3.jpg
-                    OTHER // account.jpg, award.jpg, bugfix.jpg, combat.jpg, hiscores.jpg, money,jpg, random.jpg, website.jpg -->
-                    <img src="./site/2009scape-resources/img/updates/icons/generic1.jpg" />
-
-                    <!--UPDATE CONTENT TEASER-->
-                    <p>This week in 2009scape, we are looking at a new staff member, Mico, to our team as our moderator. 
-                      They will be assisting the developers with community issues to let developer solely focus on developing 2009scape. 
-
-                      <!--READ MORE LINK-->
-                      <br><a href="./services/m=news/archives/2021-08-16.html">Read more..</a>
-                    </p>
-                  </div>
-                </div>
-                
-
-
-
-
-                <!--END OF LATEST UPDATE ITEMS SECTION-->
+                              <!--UPDATE CONTENT TEASER-->
+                              <p>{{page.excerpt | truncate: 280 }}
+                                <!--READ MORE LINK-->
+                                <br><a href="{{ page.url | prepend: site.baseurl }}">Read more..</a>
+                              </p>
+                            </div>
+                          </div>
+                        {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                {% endfor %}
               </div>
 
 
@@ -215,7 +191,8 @@ title: A free & open-source remake of 2009 era RuneScape
                   <table class="Updates">
                     {% assign counter = 0 %}
                     {% assign added = 0 %}
-                    {% for page in site.pages reversed %}
+                    {% assign sorted = site.pages | sort: 'date' | reverse %}
+                    {% for page in sorted %}
                       {% for tag in page.tags %}
                         {% if tag == "news" %}
                           {% if counter < 3 %}
@@ -251,7 +228,7 @@ title: A free & open-source remake of 2009 era RuneScape
                   </a>
                 </div>
                 <!--RIGHT LINK: ARCHIVE-->
-                <div class="moreArchive"><a href="./services/m=news/list.html">Browse the Updates Archive</a>
+                <div class="moreArchive"><a href="./services/m=news/">Browse the Updates Archive</a>
                 </div>
               </div>
             </div>
