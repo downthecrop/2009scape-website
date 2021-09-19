@@ -47,7 +47,7 @@ collection: Game Updates
 
 
     <!-- Jekyll -->    
-    {% assign sorted = site.pages | orderby: 'date' | reverse  %}
+    {% assign sorted = site.pages | sort: 'date' | reverse  %}
     {% for page in sorted %}
         {% for tag in page.tags %}
             {% if tag == "news" %}
