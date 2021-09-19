@@ -6,3 +6,4 @@ exclude:
   - services/m=bugtracker_v4/
   - services/m=itmedb_rs/
   - services/m=hiscore/
+  - services/m=poll/
