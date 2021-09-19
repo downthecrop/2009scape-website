@@ -1,7 +1,7 @@
 ---
 ---
 <!-- Redirect to latest news post -->
-{% assign sorted = site.pages | sort: 'date' %}
+{% assign sorted = site.pages | orderby: 'date' %}
 {% for page in sorted %}
   {% for tag in page.tags %}
     {% if tag == "news" %}

@@ -117,7 +117,7 @@ title: A free & open-source remake of 2009 era RuneScape
               <!--LATEST UPDATE ITEMS SECTION-->
               <div class="section">
                 {% assign added = 0 %}
-                {% assign sorted = site.pages | sort: 'date' | reverse %}
+                {% assign sorted = site.pages | orderby: 'date' | reverse %}
                 {% for page in sorted %}
                   {% for tag in page.tags %}
                     {% if tag == "news" and added < 3%}
@@ -191,7 +191,7 @@ title: A free & open-source remake of 2009 era RuneScape
                   <table class="Updates">
                     {% assign counter = 0 %}
                     {% assign added = 0 %}
-                    {% assign sorted = site.pages | sort: 'date' | reverse %}
+                    {% assign sorted = site.pages | orderby: 'date' | reverse %}
                     {% for page in sorted %}
                       {% for tag in page.tags %}
                         {% if tag == "news" %}
