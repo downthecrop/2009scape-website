@@ -120,7 +120,7 @@ title: A free & open-source remake of 2009 era RuneScape
                 {% assign sorted = site.pages | sort: 'date' | reverse %}
                 {% for page in sorted %}
                   {% for tag in page.tags %}
-                    {% if tag == "news" and added < 3 %}
+                    {% if tag == "news" and 3 > added %}
                       {% if added == 0 %}
                         {% assign added = added | plus:1 %}
                           <!--LATEST UPDATE ITEM-->
