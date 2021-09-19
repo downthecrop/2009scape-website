@@ -1,7 +1,0 @@
-exclude:
-  - services/m=adventurers-log/
-  - services/m=advert/
-  - services/m=avater=rs/
-  - services/m=bugtracker_v4/
-  - services/m=itmedb_rs/
-  - secure/
