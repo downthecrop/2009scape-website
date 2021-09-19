@@ -7,3 +7,4 @@ exclude:
   - services/m=itmedb_rs/
   - services/m=hiscore/
   - services/m=poll/
+  - services/m=forum/
